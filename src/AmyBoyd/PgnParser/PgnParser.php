@@ -190,7 +190,7 @@ class PgnParser
 
     private function isMoveData($line)
     {
-        return \preg_match("/^\d+\.\s+\w{2,6}(\s+\w{2,6})?\s?/si", $line);
+        return \preg_match("/^\d+\.(\s+)?\w{2,6}(\s+\w{2,6})/si", $line);
     }
 
     /**
