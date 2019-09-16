@@ -3,7 +3,7 @@
 use AmyBoyd\PgnParser\PgnParser;
 use AmyBoyd\PgnParser\Game;
 
-class PgnParserTest extends PHPUnit_Framework_TestCase
+class PgnParserTest extends PHPUnit\Framework\TestCase
 {
   public function testCountGames()
   {
@@ -13,14 +13,14 @@ class PgnParserTest extends PHPUnit_Framework_TestCase
     );
 
     foreach ($files as $file => $expectedCount) {
-      $parser = new PgnParser('test/data/' . $file);
+      $parser = new PgnParser('../../data/' . $file);
       $this->assertEquals($expectedCount, $parser->countGames());
     }
   }
 
   public function testGetGames()
   {
-    $file = 'test/data/2010 World Championship.pgn';
+    $file = '../../data/2010 World Championship.pgn';
     $parser = new PgnParser($file);
     $games = $parser->getGames();
 
@@ -31,9 +31,17 @@ class PgnParserTest extends PHPUnit_Framework_TestCase
 
   public function testGetGame()
   {
-    $file = 'test/data/2010 World Championship.pgn';
+    $file = '../../data/2010 World Championship.pgn';
     $parser = new PgnParser($file);
     $game = $parser->getGame(1);
     $this->assertInstanceOf('\AmyBoyd\PgnParser\Game', $game);
   }
+
+    public function testInvalidGames()
+    {
+        $this->expectException(Exception::class);
+        $file = '../../data/invalid.pgn';
+        $parser = new PgnParser($file);
+    }
+
 }
