@@ -201,7 +201,7 @@ class PgnParser
         $line = $this->removeAnnotations($line);
 
         if (!$this->isMoveData($line)) {
-            throw new \Exception(\sprintf('Invalid move PGN move data: "%s"', $line));
+            throw new \Exception(\sprintf('Unable to parse PGN string: "%s"', $line));
         }
 
         // Remove the move numbers, so "1. e4 e5 2. f4" becomes "e4 e5 f4"
