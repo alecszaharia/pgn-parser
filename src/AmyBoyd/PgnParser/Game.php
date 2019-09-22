@@ -25,7 +25,7 @@ class Game
   /**
    * Format not guaranteed.
    */
-  protected $fen;
+  protected $fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
 
   protected $date;
 
