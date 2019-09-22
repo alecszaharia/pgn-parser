@@ -25,6 +25,8 @@ class Game
   /**
    * Format not guaranteed.
    */
+  protected $fen;
+
   protected $date;
 
   protected $round;
@@ -111,6 +113,22 @@ class Game
       $this->site = $site;
     }
   }
+
+    /**
+     * @return mixed
+     */
+    public function getFen()
+    {
+        return $this->fen;
+    }
+
+    /**
+     * @param mixed $fen
+     */
+    public function setFen($fen)
+    {
+        $this->fen = $fen;
+    }
 
     /**
      * Get site

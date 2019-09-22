@@ -141,6 +141,9 @@ class PgnParser
         $val = trim($val, '"]');
 
         switch ($key) {
+            case 'fen':
+                $this->currentGame->setFen($val);
+                break;
             case 'event':
                 $this->currentGame->setEvent($val);
                 break;
